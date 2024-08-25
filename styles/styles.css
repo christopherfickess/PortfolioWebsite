@@ -33,11 +33,11 @@ header {
   width: 32px;
   height: 32px; }
 
-body.light-mode {
+body.light-mode, header.light-mode {
   background-color: #ffffff;
   color: #343535; }
 
-body.dark-mode {
+body.dark-mode, header.dark-mode {
   background-color: #343535;
   color: #ffffff; }
 

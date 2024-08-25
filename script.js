@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const githubToggle = document.getElementById('github-toggle');
     const githubIcon = document.getElementById('github-icon');
     const body = document.body;
+    const header = document.querySelector('header');
 
     // Set initial theme based on user preference or default to light
     const currentTheme = localStorage.getItem('theme') || 'dark';
@@ -22,12 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (theme === 'dark') {
             body.classList.add('dark-mode');
             body.classList.remove('light-mode');
+            header.classList.add('dark-mode'); // Add this line
+            header.classList.remove('light-mode'); // Add this line
             linkedinIcon.src = 'img/linkedin_dark_mode.png'; 
             githubIcon.src = 'img/github_dark_mode.png'; 
             themeIcon.src = 'img/light_mode.png'; 
         } else {
             body.classList.add('light-mode');
             body.classList.remove('dark-mode');
+            header.classList.add('light-mode'); // Add this line
+            header.classList.remove('dark-mode'); // Add this line
             linkedinIcon.src = 'img/linkedin_light_mode.png';
             githubIcon.src = 'img/github_light_mode.png';
             themeIcon.src = 'img/dark_mode.png'; 

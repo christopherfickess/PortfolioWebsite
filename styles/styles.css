@@ -1,3 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
+
+.profile-header {
+  min-height: 90vh;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; }
+  .profile-header h1 {
+    font-size: 2.5rem;
+    padding-top: 2rem;
+    background: #5e5d5d;
+    background-clip: text;
+    display: inline-block; }
+  .profile-header h2 {
+    font-size: 2.5rem;
+    padding-top: 2rem;
+    background: #5e5d5d;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; }
+  .profile-header h3 {
+    font-size: 1.5rem;
+    padding: 0.2rem 0rem; }
+  .profile-header h5 {
+    font-size: 1.25rem;
+    padding: 0.2rem 0rem; }
+  .profile-header p {
+    padding-top: 1rem;
+    color: #2c2c2c; }
+
 header {
   color: #fff;
   padding: 20px;

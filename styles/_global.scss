@@ -65,12 +65,12 @@ header {
     height: 32px;
 }
 
-body.light-mode {
+body.light-mode, header.light-mode {
     background-color: $secondary-color;
     color: $primary-color;
 }
 
-body.dark-mode {
+body.dark-mode, header.dark-mode {
     background-color: $primary-color;
     color: $secondary-color
 }

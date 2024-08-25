@@ -1,0 +1,76 @@
+$primary-color: #343535;
+$secondary-color: #ffffff;
+$header1: 3.5rem;
+$header2: 4rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$header5: 2rem;
+$text:    2.5rem;
+
+header {
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+
+  h1 {
+    font-size: $header1;
+  }
+
+  h2 {
+    font-size: $header2;
+  }
+
+  h3 {
+    font-size: $header3;
+  }
+
+  h4 {
+    font-size: $header4;
+  }
+
+  h5 {
+    font-size: $header5;
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        display: inline;
+        margin: 0 10px;
+
+        a {
+          text-decoration: none;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+#theme-toggle, #linkedin-toggle, #github-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#theme-icon, #linkedin-icon, #github-icon {
+    width: 32px;
+    height: 32px;
+}
+
+body.light-mode {
+    background-color: $secondary-color;
+    color: $primary-color;
+}
+
+body.dark-mode {
+    background-color: $primary-color;
+    color: $secondary-color
+}

@@ -1,0 +1,133 @@
+header {
+  color: #fff;
+  padding: 20px;
+  text-align: center; }
+  header h1 {
+    font-size: 3.5rem; }
+  header h2 {
+    font-size: 4rem; }
+  header h3 {
+    font-size: 2.5rem; }
+  header h4 {
+    font-size: 2rem; }
+  header h5 {
+    font-size: 2rem; }
+  header nav ul {
+    list-style: none;
+    padding: 0; }
+    header nav ul li {
+      display: inline;
+      margin: 0 10px; }
+      header nav ul li a {
+        text-decoration: none; }
+        header nav ul li a:hover {
+          text-decoration: underline; }
+
+#theme-toggle, #linkedin-toggle, #github-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px; }
+
+#theme-icon, #linkedin-icon, #github-icon {
+  width: 32px;
+  height: 32px; }
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #343535; }
+
+body.dark-mode {
+  background-color: #343535;
+  color: #ffffff; }
+
+@media screen and (max-width: 1520px) {
+  html {
+    font-size: 53%; }
+    html .intro-text h2 {
+      font-size: 5rem; }
+    html .intro-text h3 {
+      font-size: 3.5rem; }
+    html .intro-text p {
+      font-size: 2rem; }
+
+  .intro {
+    min-height: 50vh; }
+
+  svg {
+    width: 90%; }
+
+  nav {
+    width: 80%;
+    padding: 0rem 2rem; }
+    nav ul {
+      padding: 2rem 5rem; }
+    nav .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 2rem 0rem; }
+
+  .intro-social {
+    padding: 0rem 0rem 5rem 0rem; }
+
+  footer h4 {
+    font-size: 4rem; }
+  footer ul {
+    padding: 0rem;
+    margin: 0rem; } }
+@media screen and (max-width: 850px) {
+  html {
+    font-size: 45%; }
+
+  nav {
+    width: 90%;
+    margin: 2rem;
+    padding: 0rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; }
+    nav .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+    nav ul {
+      padding: 0rem 2rem; }
+    nav li {
+      padding: 0rem 1.57rem; }
+
+  .splash {
+    display: none; }
+
+  .intro-images {
+    background: url("/Portfolio/img/splash.png");
+    background-repeat: no-repeat;
+    background-size: contain; }
+
+  .travelly,
+  .chris-project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1 1 50rem; }
+
+  footer h4 {
+    font-size: 3rem; }
+  footer ul {
+    padding: 0rem;
+    margin: 0rem; }
+  footer img {
+    width: 5rem; }
+
+  .intro-image {
+    display: none; }
+
+  form {
+    padding: 0rem;
+    size: 100%; } }
+
+/*# sourceMappingURL=styles.css.map */

@@ -11,11 +11,27 @@ html {
   min-height: 90vh;
   width: 90%;
   margin: auto;
-  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  padding: 0;
+  gap: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row; }
+  .profile-header .header-profile {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0; }
+  .profile-header .header-base {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0; }
   .profile-header h1 {
     font-size: 2.5rem;
     padding-top: 2rem;
@@ -38,31 +54,13 @@ html {
   .profile-header p {
     padding-top: 1rem;
     color: #2c2c2c; }
-
-header {
-  color: #fff;
-  padding: 20px;
-  text-align: center; }
-  header h1 {
-    font-size: 3.5rem; }
-  header h2 {
-    font-size: 4rem; }
-  header h3 {
-    font-size: 2.5rem; }
-  header h4 {
-    font-size: 2rem; }
-  header h5 {
-    font-size: 2rem; }
-  header nav ul {
-    list-style: none;
-    padding: 0; }
-    header nav ul li {
-      display: inline;
-      margin: 0 10px; }
-      header nav ul li a {
-        text-decoration: none; }
-        header nav ul li a:hover {
-          text-decoration: underline; }
+  .profile-header .social-profile {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 32px;
+    height: 32px; }
 
 #theme-toggle, #linkedin-toggle, #github-toggle {
   background: none;
@@ -71,8 +69,8 @@ header {
   padding: 10px; }
 
 #theme-icon, #linkedin-icon, #github-icon {
-  width: 32px;
-  height: 32px; }
+  width: 25px;
+  height: 25px; }
 
 body.light-mode, header.light-mode {
   background-color: #ffffff;

@@ -17,14 +17,32 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
-.profile-header{
+.profile-header {
     min-height: 90vh;
     width: 90%;
     margin: auto;
-    flex-wrap: wrap;
-  
+    display: flex;
+    justify-content: flex-start; // Aligns items to the left
+    align-items: center; // Vertically centers the items
+    text-align: left;
+    padding: 0; // Ensure no extra padding
+    gap: 10px; // Space between header-profile and header-base
+
+    .header-profile {
+        margin-right: 10px; // Space between profile image and text
+        display: flex;
+        align-items: center;
+        padding: 0; // Ensure no extra padding
+    }
+
+    .header-base {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; // Align text to the left
+        padding: 0; // Ensure no extra padding
+        margin: 0; // Ensure no extra margin
+    }
+
     @include flex(space-between,center,row);
     h1{
       font-size: 2.5rem;
@@ -53,53 +71,16 @@ html {
       padding-top: 1rem;
       color: $grey-text;
     }
-}
-
-header {
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-
-  h1 {
-    font-size: $header1;
-  }
-
-  h2 {
-    font-size: $header2;
-  }
-
-  h3 {
-    font-size: $header3;
-  }
-
-  h4 {
-    font-size: $header4;
-  }
-
-  h5 {
-    font-size: $header5;
-  }
-
-  nav {
-    ul {
-      list-style: none;
-      padding: 0;
-      
-      li {
-        display: inline;
-        margin: 0 10px;
-
-        a {
-          text-decoration: none;
-          
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
+    .social-profile {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        width: 32px;
+        height: 32px;
     }
-  }
 }
+
 
 #theme-toggle, #linkedin-toggle, #github-toggle {
     background: none;
@@ -109,8 +90,8 @@ header {
 }
 
 #theme-icon, #linkedin-icon, #github-icon {
-    width: 32px;
-    height: 32px;
+    width: 25px;
+    height: 25px;
 }
 
 body.light-mode, header.light-mode {

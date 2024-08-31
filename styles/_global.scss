@@ -5,11 +5,34 @@ $header2: 4rem;
 $header3: 2.5rem;
 $header4: 2rem;
 $header5: 2rem;
-$text:    2.5rem;
+$text: 2.5rem;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.container-main{
+  width: 50vw; // Adjust width as needed
+  height: 30vh; // Adjust height as needed
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #707070; // Optional: Border for visual reference
+  border-radius: 25px;
+  overflow: hidden; // To ensure child content stays within bounds
+  // background-color: rgb(235, 220, 220); // Optional: Background color
+  &.light-mode {
+    background-color: #f5f5f5;
+    color: #343535;
+  }
+
+  &.dark-mode {
+      background-color: #444;
+      color: #f0f0f0;
+  }
 }
 
 html {
@@ -17,89 +40,198 @@ html {
     scroll-behavior: smooth;
 }
 
-.profile-header {
-    min-height: 90vh;
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: flex-start; // Aligns items to the left
-    align-items: center; // Vertically centers the items
-    text-align: left;
-    padding: 0; // Ensure no extra padding
-    gap: 10px; // Space between header-profile and header-base
-
-    .header-profile {
-        margin-right: 10px; // Space between profile image and text
-        display: flex;
-        align-items: center;
-        padding: 0; // Ensure no extra padding
-    }
-
-    .header-base {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; // Align text to the left
-        padding: 0; // Ensure no extra padding
-        margin: 0; // Ensure no extra margin
-    }
-
-    @include flex(space-between,center,row);
-    h1{
-      font-size: 2.5rem;
-      padding-top: 2rem;
-      background: rgb(94, 93, 93);
-      background-clip: text;
-      display: inline-block;
-    }
-    h2 {
-      font-size: 2.5rem;
-      padding-top: 2rem;
-      background: rgb(94, 93, 93);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-    }
-    h3{
-      font-size: 1.5rem;
-      padding: 0.2rem 0rem;
-    }
-    h5{
-      font-size: 1.25rem;
-      padding: 0.2rem 0rem;
-    }
-    p{
-      padding-top: 1rem;
-      color: $grey-text;
-    }
-    .social-profile {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        width: 32px;
-        height: 32px;
-    }
+.spacer {
+  height: 20px; // Adjust the value to push the header down
 }
 
+.profile-pic-containter{
+  display: inline-block; /* Makes the container fit the image's width */
+  padding: 20px; /* Adjust padding as needed */
+  background-color: rgb(235, 220, 220); /* Color for the padding area */
+  border-radius: 45px; /* Optional: Rounds the corners */
+  overflow: hidden; 
+  position: relative;
+  top: -35px; 
 
-#theme-toggle, #linkedin-toggle, #github-toggle {
+  &.light-mode {
+    background-color: #f5f5f5;
+    color: #343535;
+  }
+
+  &.dark-mode {
+      background-color: #444;
+      color: #f0f0f0;
+  }
+}
+
+.profile-header {
+  --header-height: 15vh;
+  background-color: rgb(235, 220, 220);
+  position: relative;
+  // margin: auto;
+  // display: flex;
+  // border: 1px solid #707070;
+  color: #707070;
+  border-radius: 25px; 
+  justify-content: space-between; /* Ensure space between left and right */
+  align-items: center; /* Vertically centers the items */
+  text-align: left;
+  // padding: .5rem; /* Ensure no extra padding */
+  // gap: 10px; /* Space between header-profile and header-base */
+  z-index: 1;
+
+    .header-left {
+        top: 0;
+        flex: 0 0 45%; // Takes up 30% of the width
+        display: flex;
+        justify-content: flex-start; // Aligns items to the left
+        align-items: center; // Vertically centers the items
+        text-align: left;
+        color: #707070;
+        z-index: 3;
+
+        .parent {
+          position: relative; /* Ensures the child is positioned relative to this container */
+        }
+
+        .profile-pic {
+            border-radius: 30px;
+            background-color: rgb(235, 220, 220);
+        }
+
+        .header-profile {
+            margin-right: 10px; // Space between profile image and text
+            display: flex;
+            align-items: center;
+            padding: 1rem; // Ensure no extra padding
+            border-radius: 10px;
+        }
+
+        .header-base {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; // Align text to the left
+            padding: 0; // Ensure no extra padding
+            margin: 0; // Ensure no extra margin
+        }
+    }
+
+    .divider {
+        width: 2px; // The width of the vertical line
+        background-color: #cecece; // Color of the divider line
+        height: calc(var(--header-height) * 0.8);; // Adjust the height of the divider line
+        align-self: stretch; /* Ensures the divider spans the full height */
+        margin-top: 12px; /* Adjust to drop the divider down */
+        align-items: center;
+        z-index: 10;
+    }
+
+    .right-header {
+        flex: 0 0 45%; // Takes up 70% of the width
+        display: flex;
+        justify-content: flex-start; // Aligns items to the left
+        align-items: center; // Vertically centers the items
+        text-align: left;
+        color: #707070;
+        z-index: 3;
+
+        .profile-email, 
+        .profile-location,
+        .profile-resume,
+        .profile-status{
+            padding: 1rem;
+        }
+
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; // Align text to the left
+            margin: 0; // Ensure no extra margin           
+        }
+
+        .profile-resume {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; // Align text to the left
+            padding: 0; // Ensure no extra padding
+            margin: 0; // Ensure no extra margin
+        }
+    }
+
+    &.light-mode {
+        background-color: #f5f5f5;
+        color: #343535;
+    }
+
+    &.dark-mode {
+        background-color: #444;
+        color: #f0f0f0;
+    }
+
+    @include flex(space-between, center, row);
+
+    h1 {
+        font-size: 2.5rem;
+        padding-top: 2rem;
+        background: rgb(94, 93, 93);
+        background-clip: text;
+        display: inline-block;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        padding-top: 2rem;
+        background: rgb(94, 93, 93);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        padding: 0.2rem 0rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        padding: 0.2rem 0rem;
+    }
+
+    p {
+        padding-top: 1rem;
+        color: $grey-text;
+    }
+
+}
+
+body {
+    padding-top: 2rem;
+}
+
+#theme-toggle,
+#linkedin-toggle,
+#github-toggle {
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
 }
 
-#theme-icon, #linkedin-icon, #github-icon {
+#theme-icon,
+#linkedin-icon,
+#github-icon {
     width: 25px;
     height: 25px;
 }
 
-body.light-mode, header.light-mode {
+body.light-mode,
+header.light-mode {
     background-color: $secondary-color;
     color: $primary-color;
 }
 
-body.dark-mode, header.dark-mode {
+body.dark-mode,
+header.dark-mode {
     background-color: $primary-color;
-    color: $secondary-color
+    color: $secondary-color;
 }

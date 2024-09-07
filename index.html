@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body class="light-mode">
-    <div class="container-main">
+    <div class="container-main light-text dark-text">
         <header class="profile-header">
             <div class="spacer"></div>
-            <div class="header-left">
-                <div class="header-profile">
-                    <img class="profile-pic" src="./img/fickess-profile.jpeg" alt="logo" width="90rem">
+            <div class="header-left light-mode dark-mode">
+                <div class="profile-pic-container light-mode dark-mode">
+                    <img class="profile-pic" src="./img/fickess-profile.png" alt="logo" width="145rem">
                 </div>
                 <div class="header-base">
                     <div class="name">
@@ -26,16 +26,20 @@
                             <img id="theme-icon" src="img/dark_mode.png" alt="Toggle Theme">
                         </button>
                         <button id="linkedin-toggle">
-                            <img id="linkedin-icon" src="img/linkedin_light_mode.png" alt="LinkedIn">
+                            <a class="Linkedin" target="_blank" title="Linkedin-Account" href="https://www.linkedin.com/in/christopher-fickess-223a17182/">    
+                                <img id="linkedin-icon" src="img/linkedin_light_mode.png" alt="linkedin" href="https://www.linkedin.com/in/christopher-fickess-223a17182/">
+                            </a>
                         </button>
                         <button id="github-toggle">
-                            <img id="github-icon" src="img/github_light_mode.png" alt="GitHub">
+                            <a class="Linkedin" target="_blank" title="Linkedin-Account" href="https://github.com/christopherfickess"> 
+                                <img id="github-icon" src="img/github_light_mode.png" alt="https://github.com/christopherfickess">
+                            </a>
                         </button>
                     </div>
                 </div>  
             </div>
             <div class="divider"></div>
-            <div class="right-header">
+            <div class="right-header light-mode dark-mode">
                 <div class="profile-details">
                     <div class="profile-email">
                         <h3>Email</h3>
@@ -46,7 +50,7 @@
                         <h5>Oklahoma City, OK</h5>
                     </div>
                 </div>
-                <div class="profile-resume">
+                <div class="profile-details-2">
                     <div class="profile-resume">  
                         <h3>Resume</h3>
                         <h5>Download</h5>
@@ -58,6 +62,35 @@
                 </div>
             </div>
         </header>
+        <div class="main-body light-mode dark-mode">
+            <div class="side-bar light-mode dark-mode">
+                <ul class="nav">
+                    <li class="nav_item active">
+                        <a href="index.html" aria-current="page" class="nav-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="M38.67-160v-100q0-34.67 17.83-63.17T105.33-366q69.34-31.67 129.67-46.17 60.33-14.5 123.67-14.5 63.33 0 123.33 14.5T611.33-366q31 14.33 49.17 42.83T678.67-260v100h-640Zm706.66 0v-102.67q0-56.66-29.5-97.16t-79.16-66.84q63 7.34 118.66 22.5 55.67 15.17 94 35.5 34 19.34 53 46.17 19 26.83 19 59.83V-160h-176ZM358.67-480.67q-66 0-109.67-43.66Q205.33-568 205.33-634T249-743.67q43.67-43.66 109.67-43.66t109.66 43.66Q512-700 512-634t-43.67 109.67q-43.66 43.66-109.66 43.66ZM732-634q0 66-43.67 109.67-43.66 43.66-109.66 43.66-11 0-25.67-1.83-14.67-1.83-25.67-5.5 25-27.33 38.17-64.67Q578.67-590 578.67-634t-13.17-80q-13.17-36-38.17-66 12-3.67 25.67-5.5 13.67-1.83 25.67-1.83 66 0 109.66 43.66Q732-700 732-634ZM105.33-226.67H612V-260q0-14.33-8.17-27.33-8.16-13-20.5-18.67-66-30.33-117-42.17-51-11.83-107.66-11.83-56.67 0-108 11.83-51.34 11.84-117.34 42.17-12.33 5.67-20.16 18.67-7.84 13-7.84 27.33v33.33Zm253.34-320.66q37 0 61.83-24.84Q445.33-597 445.33-634t-24.83-61.83q-24.83-24.84-61.83-24.84t-61.84 24.84Q272-671 272-634t24.83 61.83q24.84 24.84 61.84 24.84Zm0 320.66Zm0-407.33Z"/></svg>About
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="index.html" aria-current="page" class="nav-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="M278-279.33h276.67V-346H278v66.67Zm0-167.34h404v-66.66H278v66.66ZM278-614h404v-66.67H278V-614Zm-91.33 494q-27 0-46.84-19.83Q120-159.67 120-186.67v-586.66q0-27 19.83-46.84Q159.67-840 186.67-840h586.66q27 0 46.84 19.83Q840-800.33 840-773.33v586.66q0 27-19.83 46.84Q800.33-120 773.33-120H186.67Zm0-66.67h586.66v-586.66H186.67v586.66Zm0-586.66v586.66-586.66Z"/></svg>Resume
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="index.html" aria-current="page" class="nav-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="M480-406.67 40.67-643.33 480-880l440 236.67-440 236.66Zm0 163.34L64.33-467l70-38L480-319l346.33-186 70 38L480-243.33ZM480-80 64.33-303.67l70-38 345.67 186 346.33-186 70 38L480-80Zm0-403 301-160.33-301-160.34-300.33 160.34L480-483Zm.67-160.33Z"/></svg>Portfolio
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="web-pages/contact-me.html" aria-current="page" class="nav-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="M120-160v-640l760 320-760 320Zm66.67-102 520.66-218-520.66-220v158.67L428-480l-241.33 60v158Zm0 0v-438 438Z"/></svg>Contact
+                        </a> 
+                    </li>
+                </ul>
+            </div>
+            <div class="main-panel light-mode dark-mode">
+                <iframe src="https://docs.google.com/document/d/12EOBMyoUUoHmzDsGBeIQy_Q3S6UghmqZ/pub" width="80%" height="140%"></iframe>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

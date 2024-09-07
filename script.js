@@ -12,11 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set initial theme based on user preference or default to light
     const currentTheme = localStorage.getItem('theme') || 'dark';
     setTheme(currentTheme);
+    
 
     // Add event listener to toggle theme
     themeToggle.addEventListener('click', () => {
         const newTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
         setTheme(newTheme);
+        const click = body.classList.contains('nav_item') ? 'before' : 'after';
+        setItem(clicked);
     });
 
     function setTheme(theme) {
@@ -39,4 +42,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         localStorage.setItem('theme', theme); // Save theme preference
     }
+
+    function setButtonColor(clicked){
+        if (clicked == 'after'){
+            body.classList.add('after');
+        }
+        else{
+            body.classList.add('before')
+        }
+        localStorage.setItem('clicked', clicked)
+    }
+});
+
+document.querySelectorAll('.nav_item').forEach(item => {
+    item.addEventListener('click', function() {
+        // Remove 'active' class from all items
+        document.querySelectorAll('.nav_item').forEach(navItem => {
+            navItem.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked item
+        this.classList.add('active');
+    });
 });

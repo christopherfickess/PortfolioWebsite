@@ -4,21 +4,17 @@
   box-sizing: border-box; }
 
 .container-main {
-  width: 50vw;
-  height: 30vh;
+  padding-top: 6rem;
+  width: 60%;
+  height: 100%;
   margin: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #707070;
+  justify-content: top;
+  flex-direction: column;
+  align-items: top;
   border-radius: 25px;
+  border: 2px solid #707070;
   overflow: hidden; }
-  .container-main.light-mode {
-    background-color: #f5f5f5;
-    color: #343535; }
-  .container-main.dark-mode {
-    background-color: #444;
-    color: #f0f0f0; }
 
 html {
   font-size: 62.5%;
@@ -27,31 +23,48 @@ html {
 .spacer {
   height: 20px; }
 
-.profile-pic-containter {
+.profile-pic-container {
   display: inline-block;
-  /* Makes the container fit the image's width */
-  padding: 20px;
-  /* Adjust padding as needed */
-  background-color: #ebdcdc;
-  /* Color for the padding area */
-  border-radius: 45px;
-  /* Optional: Rounds the corners */
-  overflow: hidden;
+  border-radius: 3rem;
   position: relative;
-  top: -35px; }
-  .profile-pic-containter.light-mode {
-    background-color: #f5f5f5;
+  top: -30px;
+  z-index: 2; }
+  .profile-pic-container.light-mode {
+    border: 5px solid rgba(0, 0, 0, 0.05);
+    background-color: #b4b4b4;
     color: #343535; }
-  .profile-pic-containter.dark-mode {
-    background-color: #444;
+  .profile-pic-container.dark-mode {
+    border: 5px solid rgba(0, 0, 0, 0.05);
+    background-color: #23262b;
+    color: #f0f0f0; }
+
+.profile-pic {
+  display: inline-block;
+  border-radius: 3rem;
+  position: relative;
+  z-index: 2; }
+  .profile-pic.light-mode {
+    border: 5px solid rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #343535; }
+  .profile-pic.dark-mode {
+    border: 5px solid rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.05);
     color: #f0f0f0; }
 
 .profile-header {
-  --header-height: 15vh;
-  background-color: #ebdcdc;
+  border: 2rem;
+  display: inline-block;
+  border-color: #1d1e24;
+  margin: 20px; }
+
+.profile-header {
+  --header-height: 11.5vh;
+  width: 97%;
+  background-color: #b4b4b4;
+  height: 12vh;
   position: relative;
-  color: #707070;
-  border-radius: 25px;
+  border-radius: 2.5rem;
   justify-content: space-between;
   /* Ensure space between left and right */
   align-items: center;
@@ -69,14 +82,10 @@ html {
     justify-content: flex-start;
     align-items: center;
     text-align: left;
-    color: #707070;
     z-index: 3; }
     .profile-header .header-left .parent {
       position: relative;
       /* Ensures the child is positioned relative to this container */ }
-    .profile-header .header-left .profile-pic {
-      border-radius: 30px;
-      background-color: #ebdcdc; }
     .profile-header .header-left .header-profile {
       margin-right: 10px;
       display: flex;
@@ -87,11 +96,15 @@ html {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding: 0;
+      padding-left: 0rem;
       margin: 0; }
+      .profile-header .header-left .header-base .name, .profile-header .header-left .header-base .job-title, .profile-header .header-left .header-base .social-profiles {
+        padding-left: 2rem; }
+      .profile-header .header-left .header-base .social-profiles {
+        padding-top: .75rem; }
   .profile-header .divider {
     width: 2px;
-    background-color: #cecece;
+    background-color: #b4b4b4;
     height: calc(var(--header-height) * 0.8);
     align-self: stretch;
     /* Ensures the divider spans the full height */
@@ -105,7 +118,6 @@ html {
     justify-content: flex-start;
     align-items: center;
     text-align: left;
-    color: #707070;
     z-index: 3; }
     .profile-header .right-header .profile-email,
     .profile-header .right-header .profile-location,
@@ -114,43 +126,176 @@ html {
       padding: 1rem; }
     .profile-header .right-header .profile-details {
       display: flex;
+      flex: 0 0 55%;
       flex-direction: column;
       align-items: flex-start;
       margin: 0; }
     .profile-header .right-header .profile-resume {
       display: flex;
+      flex: 0 0 35%;
       flex-direction: column;
       align-items: flex-start;
       padding: 0;
       margin: 0; }
   .profile-header.light-mode {
-    background-color: #f5f5f5;
+    background-color: #b4b4b4;
     color: #343535; }
   .profile-header.dark-mode {
-    background-color: #444;
+    background-color: #23262b;
     color: #f0f0f0; }
   .profile-header h1 {
     font-size: 2.5rem;
-    padding-top: 2rem;
-    background: #5e5d5d;
     background-clip: text;
     display: inline-block; }
   .profile-header h2 {
     font-size: 2.5rem;
-    padding-top: 2rem;
-    background: #5e5d5d;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block; }
   .profile-header h3 {
-    font-size: 1.75rem;
-    padding: 0.2rem 0rem; }
+    font-size: 1.75rem; }
   .profile-header h5 {
-    font-size: 1.25rem;
-    padding: 0.2rem 0rem; }
-  .profile-header p {
-    padding-top: 1rem;
-    color: #b9b9b9; }
+    font-size: 1.25rem; }
+
+.main-body {
+  display: flex;
+  /* Flexbox layout */
+  height: 100vh;
+  margin: 0; }
+
+.side-bar {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  height: 40vh;
+  padding: 2rem;
+  border-radius: 3rem;
+  /* Rounded corners */
+  background-color: #e0e0e0; }
+  .side-bar.light-mode {
+    background-color: #f5f5f5;
+    color: #b4b4b4; }
+  .side-bar.dark-mode {
+    background-color: #23262b;
+    color: #b4b4b4; }
+  .side-bar nav {
+    width: 100%; }
+  .side-bar .nav {
+    list-style: none;
+    /* Remove default list styling */
+    padding: 0;
+    /* Remove default padding */
+    margin: 0;
+    /* Remove default margin */ }
+    .side-bar .nav .nav_item {
+      width: 100%;
+      /* Full width to fit the sidebar */
+      box-sizing: border-box;
+      height: 8rem;
+      padding: 0;
+      /* Remove extra padding to avoid misalignment */
+      margin-bottom: 2rem;
+      /* Space between items */
+      border-radius: 3rem;
+      /* Rounded corners */
+      background-color: #2E2F36;
+      /* Default background color */
+      text-align: center;
+      /* Center the text */
+      transition: background-color 0.3s ease;
+      /* Smooth transition for hover */
+      display: flex;
+      /* Flexbox to ensure full coverage */
+      align-items: center;
+      /* Center content vertically */
+      justify-content: center;
+      /* Center content horizontally */ }
+      .side-bar .nav .nav_item img {
+        filter: invert(0) brightness(1);
+        /* Default state */ }
+      .side-bar .nav .nav_item:hover, .side-bar .nav .nav_item.active {
+        background-color: #007bff;
+        /* Hover background color */
+        color: white; }
+        .side-bar .nav .nav_item:hover .nav-button img, .side-bar .nav .nav_item.active .nav-button img {
+          filter: invert(1) sepia(1) saturate(5) hue-rotate(190deg);
+          /* Optional: Invert image colors on hover */ }
+      .side-bar .nav .nav_item.light-mode {
+        background-color: #e7e7e7;
+        color: #343535; }
+        .side-bar .nav .nav_item.light-mode:hover img, .side-bar .nav .nav_item.light-mode.active img {
+          filter: invert(1) sepia(1) saturate(5) hue-rotate(190deg);
+          /* Slightly darker on hover */ }
+      .side-bar .nav .nav_item.dark-mode {
+        background-color: #555;
+        color: #f0f0f0; }
+        .side-bar .nav .nav_item.dark-mode:hover, .side-bar .nav .nav_item.dark-mode.active {
+          background-color: #444;
+          /* Slightly darker on hover */ }
+      .side-bar .nav .nav_item .nav-button {
+        display: flex;
+        flex-direction: column;
+        /* Stack the icon and text vertically */
+        align-items: center;
+        justify-content: center;
+        /* Center the button content */
+        width: 100%;
+        /* Make the button fill the item */
+        height: 100%;
+        /* Make the button fill the item */
+        border-radius: 10px;
+        background-color: transparent;
+        /* Set to transparent so the hover effect on .nav_item is visible */
+        color: white;
+        text-decoration: none;
+        /* Remove underline */
+        cursor: pointer; }
+        .side-bar .nav .nav_item .nav-button img {
+          margin-bottom: 0.1rem;
+          /* Space between the image and the text */
+          width: 6rem;
+          /* Adjust the size of the icon */
+          height: 6rem;
+          stroke-width: 1; }
+
+.main-panel {
+  flex-grow: 1;
+  padding: 0;
+  box-sizing: border-box; }
+
+.main-panel iframe {
+  border-radius: 5rem;
+  /* Optional: round the corners */
+  border: none; }
+  .main-panel iframe .dark-mode .main-panel {
+    background-color: #1e1e1e;
+    color: white; }
+  .main-panel iframe .light-mode .main-panel {
+    background-color: white;
+    color: black; }
+
+.main-content {
+  width: 75%;
+  /* Main content takes up the remaining 75% */
+  padding: 20px;
+  /* Space inside the main content */
+  margin-left: auto;
+  /* Pushes the content to the right side */
+  background-color: #fff;
+  /* Default background color for the main content */
+  border-radius: 10px;
+  /* Optional: round the corners */ }
+  .main-content.light-mode {
+    background-color: #ffffff;
+    /* Light mode background color */
+    color: #343535;
+    /* Text color for light mode */ }
+  .main-content.dark-mode {
+    background-color: #222;
+    /* Dark mode background color */
+    color: #f0f0f0;
+    /* Text color for dark mode */ }
 
 body {
   padding-top: 2rem; }
@@ -166,108 +311,41 @@ body {
 #theme-icon,
 #linkedin-icon,
 #github-icon {
-  width: 25px;
-  height: 25px; }
+  width: 20px;
+  height: 20px; }
+
+ul {
+  list-style: none;
+  /* Removes bullets */
+  padding: 0;
+  /* Optional: Removes default padding */
+  margin: 0;
+  /* Optional: Removes default margin */ }
+
+li {
+  margin: 0;
+  /* Optional: Adjusts margin */
+  padding: 0;
+  /* Optional: Adjusts padding */ }
+
+body {
+  padding-top: 2rem;
+  color: #1d1e24;
+  /* Default text color */
+  background-color: #ffffff;
+  /* Default background color */ }
 
 body.light-mode,
 header.light-mode {
   background-color: #ffffff;
-  color: #343535; }
+  color: black; }
 
 body.dark-mode,
 header.dark-mode {
-  background-color: #343535;
-  color: #ffffff; }
+  background-color: #1d1e24;
+  color: white; }
 
-@media (max-width: 1520px) {
-  html {
-    font-size: 53%; }
-
-  .intro-text h2 {
-    font-size: 5rem; }
-
-  .intro-text h3 {
-    font-size: 3.5rem; }
-
-  .intro-text p {
-    font-size: 2rem; }
-
-  .intro {
-    min-height: 50vh; }
-
-  svg {
-    width: 90%; }
-
-  nav {
-    width: 80%;
-    padding: 0 2rem; }
-    nav ul {
-      padding: 2rem 5rem; }
-    nav .logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 2rem 0; }
-
-  .intro-social {
-    padding: 0 0 5rem; }
-
-  footer h4 {
-    font-size: 4rem; }
-  footer ul {
-    padding: 0;
-    margin: 0; } }
-@media (max-width: 850px) {
-  html {
-    font-size: 45%; }
-
-  nav {
-    width: 90%;
-    margin: 2rem;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row; }
-    nav .logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column; }
-    nav ul {
-      padding: 0 2rem; }
-    nav li {
-      padding: 0 1.57rem; }
-
-  .splash {
-    display: none; }
-
-  .intro-images {
-    background: url("/Portfolio/img/splash.png");
-    background-repeat: no-repeat;
-    background-size: contain; }
-
-  .travelly,
-  .chris-project {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex: 1 1 50rem; }
-
-  footer h4 {
-    font-size: 3rem; }
-  footer ul {
-    padding: 0;
-    margin: 0; }
-  footer img {
-    width: 5rem; }
-
-  .intro-image {
-    display: none; }
-
-  form {
-    padding: 0; } }
+h1, h2, h3, h4, h5, p {
+  color: inherit; }
 
 /*# sourceMappingURL=styles.css.map */

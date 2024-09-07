@@ -1,11 +1,3 @@
-$primary-color: #343535;
-$secondary-color: #ffffff;
-$header1: 3.5rem;
-$header2: 4rem;
-$header3: 2.5rem;
-$header4: 2rem;
-$header5: 2rem;
-$text: 2.5rem;
 
 * {
     margin: 0;
@@ -13,66 +5,90 @@ $text: 2.5rem;
     box-sizing: border-box;
 }
 
+
 .container-main{
-  width: 50vw; // Adjust width as needed
-  height: 30vh; // Adjust height as needed
+  padding-top: 6rem;
+  width: 60%; // Adjust width as needed
+  height: 100%; // Adjust height as needed
   margin: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #707070; // Optional: Border for visual reference
+  justify-content: top;
+  flex-direction: column;
+  align-items: top;
   border-radius: 25px;
+  border: 2px solid #707070;  //remove me
   overflow: hidden; // To ensure child content stays within bounds
   // background-color: rgb(235, 220, 220); // Optional: Background color
-  &.light-mode {
-    background-color: #f5f5f5;
-    color: #343535;
-  }
-
-  &.dark-mode {
-      background-color: #444;
-      color: #f0f0f0;
-  }
+  
 }
 
 html {
-    font-size: 100%;
+    font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
 .spacer {
-  height: 20px; // Adjust the value to push the header down
+  height: 20px;
 }
 
-.profile-pic-containter{
-  display: inline-block; /* Makes the container fit the image's width */
-  padding: 20px; /* Adjust padding as needed */
-  background-color: #444; /* Color for the padding area */
-  border-radius: 45px; /* Optional: Rounds the corners */
-  overflow: hidden; 
+.profile-pic-container{
+  display: inline-block;
+  border-radius: 3rem;
   position: relative;
-  top: -35px; 
+  top: -30px; 
+  z-index: 2;
 
   &.light-mode {
-    background-color: #f5f5f5;
+    border: 5px solid $portfolio-color;
+    background-color: $box-color-light;
     color: #343535;
   }
 
   &.dark-mode {
-      background-color: #444;
-      color: #f0f0f0;
+    border: 5px solid $portfolio-color;
+    background-color: $box-color-dark;
+    color: #f0f0f0;
   }
 }
 
+.profile-pic{
+  display: inline-block;
+  border-radius: 3rem; 
+  position: relative;
+  z-index: 2;
+
+  &.light-mode {
+    border: 5px solid $portfolio-color; 
+    background-color: $portfolio-color;
+    color: #343535;
+  }
+
+  &.dark-mode {
+    border: 5px solid $portfolio-color; 
+    background-color: $portfolio-color;
+    color: #f0f0f0;
+  }
+}
+
+
 .profile-header {
-  --header-height: 15vh;
-  background-color: rgb(235, 220, 220);
+  border: 2rem;
+  display: inline-block; 
+  border-color: $primary-color;
+  margin: 20px;
+}
+
+.profile-header {
+  --header-height: 11.5vh;
+  width: 97%; // Adjust width as needed
+  background-color: $box-color-light;
+  height: 12vh;
   position: relative;
   // margin: auto;
   // display: flex;
   // border: 1px solid #707070;
-  color: #707070;
-  border-radius: 25px; 
+  // color: #707070;
+  border-radius: 2.5rem; 
   justify-content: space-between; /* Ensure space between left and right */
   align-items: center; /* Vertically centers the items */
   text-align: left;
@@ -87,16 +103,11 @@ html {
         justify-content: flex-start; // Aligns items to the left
         align-items: center; // Vertically centers the items
         text-align: left;
-        color: #707070;
+        // color: #707070;
         z-index: 3;
-
+        
         .parent {
           position: relative; /* Ensures the child is positioned relative to this container */
-        }
-
-        .profile-pic {
-            border-radius: 30px;
-            background-color: rgb(235, 220, 220);
         }
 
         .header-profile {
@@ -111,14 +122,21 @@ html {
             display: flex;
             flex-direction: column;
             align-items: flex-start; // Align text to the left
-            padding: 0; // Ensure no extra padding
+            padding-left: 0rem; // Ensure no extra padding
             margin: 0; // Ensure no extra margin
+            
+            .name, .job-title, .social-profiles{
+              padding-left: 2rem;
+            }
+            .social-profiles{
+              padding-top: .75rem;
+            }
         }
     }
 
     .divider {
         width: 2px; // The width of the vertical line
-        background-color: #cecece; // Color of the divider line
+        background-color: $box-color-light; // Color of the divider line
         height: calc(var(--header-height) * 0.8);; // Adjust the height of the divider line
         align-self: stretch; /* Ensures the divider spans the full height */
         margin-top: 12px; /* Adjust to drop the divider down */
@@ -132,7 +150,7 @@ html {
         justify-content: flex-start; // Aligns items to the left
         align-items: center; // Vertically centers the items
         text-align: left;
-        color: #707070;
+        // color: #707070;
         z-index: 3;
 
         .profile-email, 
@@ -144,6 +162,7 @@ html {
 
         .profile-details {
             display: flex;
+            flex: 0 0 55%; 
             flex-direction: column;
             align-items: flex-start; // Align text to the left
             margin: 0; // Ensure no extra margin           
@@ -151,6 +170,7 @@ html {
 
         .profile-resume {
             display: flex;
+            flex: 0 0 35%; 
             flex-direction: column;
             align-items: flex-start; // Align text to the left
             padding: 0; // Ensure no extra padding
@@ -159,12 +179,12 @@ html {
     }
 
     &.light-mode {
-        background-color: #f5f5f5;
+        background-color: $box-color-light;
         color: #343535;
     }
 
     &.dark-mode {
-        background-color: #444;
+        background-color: $box-color-dark;
         color: #f0f0f0;
     }
 
@@ -172,16 +192,14 @@ html {
 
     h1 {
         font-size: 2.5rem;
-        padding-top: 2rem;
-        background: rgb(94, 93, 93);
+        // padding-top: 2rem;
         background-clip: text;
         display: inline-block;
     }
 
     h2 {
         font-size: 2.5rem;
-        padding-top: 2rem;
-        background: rgb(94, 93, 93);
+        // padding-top: 2rem;
         background-clip: text;
         -webkit-text-fill-color: transparent;
         display: inline-block;
@@ -189,20 +207,166 @@ html {
 
     h3 {
         font-size: 1.75rem;
-        padding: 0.2rem 0rem;
+        // padding: 0.2rem 0rem;
     }
 
     h5 {
         font-size: 1.25rem;
-        padding: 0.2rem 0rem;
     }
+}
 
-    p {
-        padding-top: 1rem;
-        color: $grey-text;
+
+.main-body {
+  display: flex; /* Flexbox layout */
+  height: 100vh;
+  margin: 0;
+}
+
+
+.side-bar {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  height: 40vh;
+  padding: 2rem;
+  border-radius: 3rem; /* Rounded corners */
+  background-color: #e0e0e0;
+
+  &.light-mode {
+    background-color: #f5f5f5;
+    color: $box-color-light;
+  }
+
+  &.dark-mode {
+    background-color: $box-color-dark;
+    color: $box-color-light;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .nav {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+
+    .nav_item {
+      width: 100%; /* Full width to fit the sidebar */
+      box-sizing: border-box;
+      height: 8rem;
+      padding: 0; /* Remove extra padding to avoid misalignment */
+      margin-bottom: 2rem; /* Space between items */
+      border-radius: 3rem; /* Rounded corners */
+      background-color: $side-bar-original; /* Default background color */
+      text-align: center; /* Center the text */
+      transition: background-color 0.3s ease; /* Smooth transition for hover */
+      display: flex; /* Flexbox to ensure full coverage */
+      align-items: center; /* Center content vertically */
+      justify-content: center; /* Center content horizontally */
+
+      img {
+        filter: invert(0) brightness(1); /* Default state */
+      }
+
+      &:hover,
+      &.active {
+        background-color: #007bff; /* Hover background color */
+        color: white;
+
+        .nav-button img {
+          filter: invert(1) sepia(1) saturate(5) hue-rotate(190deg); /* Optional: Invert image colors on hover */
+        }
+      }
+
+      &.light-mode {
+        background-color: #e7e7e7;
+        color: #343535;
+
+        &:hover img,
+        &.active img{
+          filter: invert(1) sepia(1) saturate(5) hue-rotate(190deg); /* Slightly darker on hover */
+        }
+      }
+
+      &.dark-mode {
+        background-color: #555;
+        color: #f0f0f0;
+
+        &:hover,
+        &.active {
+          background-color: #444; /* Slightly darker on hover */
+        }
+      }
+
+      .nav-button {
+        display: flex;
+        flex-direction: column; /* Stack the icon and text vertically */
+        align-items: center;
+        justify-content: center; /* Center the button content */
+        width: 100%; /* Make the button fill the item */
+        height: 100%; /* Make the button fill the item */
+        border-radius: 10px;
+        background-color: transparent; /* Set to transparent so the hover effect on .nav_item is visible */
+        color: $white-text;
+        text-decoration: none; /* Remove underline */
+        cursor: pointer;
+
+        img {
+          margin-bottom: 0.1rem; /* Space between the image and the text */
+          width: 6rem; /* Adjust the size of the icon */
+          height: 6rem;
+          stroke-width: 1;
+        }
+      }
     }
+  }
+}
+
+
+.main-panel {
+  flex-grow: 1;
+  padding: 0;
+  box-sizing: border-box;
+  // border-radius: 5rem; /* Optional: round the corners */
+}
+
+.main-panel iframe {
+  border-radius: 5rem; /* Optional: round the corners */
+  border: none;
+
+
+  .dark-mode .main-panel {
+    background-color: #1e1e1e;
+    color: white;
+  }
+
+  .light-mode .main-panel {
+    background-color: white;
+    color: black;
+  }
 
 }
+
+.main-content {
+  width: 75%; /* Main content takes up the remaining 75% */
+  padding: 20px; /* Space inside the main content */
+  margin-left: auto; /* Pushes the content to the right side */
+  background-color: #fff; /* Default background color for the main content */
+  border-radius: 10px; /* Optional: round the corners */
+
+  &.light-mode {
+    background-color: #ffffff; /* Light mode background color */
+    color: #343535; /* Text color for light mode */
+  }
+
+  &.dark-mode {
+    background-color: #222; /* Dark mode background color */
+    color: #f0f0f0; /* Text color for dark mode */
+  }
+}
+
 
 body {
     padding-top: 2rem;
@@ -220,18 +384,17 @@ body {
 #theme-icon,
 #linkedin-icon,
 #github-icon {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 }
 
-body.light-mode,
-header.light-mode {
-    background-color: $secondary-color;
-    color: $primary-color;
+ul {
+  list-style: none; /* Removes bullets */
+  padding: 0;       /* Optional: Removes default padding */
+  margin: 0;        /* Optional: Removes default margin */
 }
 
-body.dark-mode,
-header.dark-mode {
-    background-color: $primary-color;
-    color: $secondary-color;
+li {
+  margin: 0;        /* Optional: Adjusts margin */
+  padding: 0;       /* Optional: Adjusts padding */
 }

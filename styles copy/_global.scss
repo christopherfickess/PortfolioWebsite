@@ -1,0 +1,247 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1, h2, h3, h4, h5, p, .light-text{
+  color: $white-text; /* Ensures text color inherits from body */
+}
+
+
+.container-main{
+  padding-top: 5rem;
+  width: 60vw; // Adjust width as needed
+  height: 30vh; // Adjust height as needed
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: 2px solid #707070;
+  overflow: hidden; // To ensure child content stays within bounds
+  // background-color: rgb(235, 220, 220); // Optional: Background color
+  
+  &.light-mode {
+    background-color: #f5f5f5;
+    color: #343535;
+    h1, h2, h3, h4, h5, p {
+      color: $black-text; /* Ensures text color inherits from body */
+    }
+  }
+
+  &.dark-mode {
+      background-color: $box-color-dark;
+      color: #f0f0f0;
+  }
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+.spacer {
+  height: 20px; // Adjust the value to push the header down
+}
+
+.profile-pic-container{
+  display: inline-block; /* Makes the container fit the image's width */
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 45px; /* Optional: Rounds the corners */
+  overflow: hidden; 
+  position: relative;
+  top: -35px; 
+  border: 2px solid #707070; // Optional: Border for visual reference
+
+  &.light-mode {
+    background-color: #f5f5f5;
+    // color: #343535;
+  }
+
+  &.dark-mode {
+    background-color: $box-color-dark;
+    // color: #f0f0f0;
+  }
+}
+
+
+.profile-second-container{
+  display: inline-block; /* Makes the container fit the image's width */
+  padding: .1px; /* Adjust padding as needed */
+  border-radius: 45px; /* Optional: Rounds the corners */
+  overflow: hidden; 
+  position: relative;
+  border: 1px solid #707070; // Optional: Border for visual reference
+
+  &.light-mode {
+    background-color: $box-color-light;
+    color: #343535;
+  }
+
+  &.dark-mode {
+    background-color: $box-color-dark;
+    color: #f0f0f0;
+  }
+}
+
+.profile-header {
+  --header-height: 15vh;
+  width: 60vw; // Adjust width as needed
+  background-color: $box-color-light;
+  position: relative;
+  // margin: auto;
+  // display: flex;
+  // border: 1px solid #707070;
+  // color: #707070;
+  border-radius: 25px; 
+  justify-content: space-between; /* Ensure space between left and right */
+  align-items: center; /* Vertically centers the items */
+  text-align: left;
+  // padding: .5rem; /* Ensure no extra padding */
+  // gap: 10px; /* Space between header-profile and header-base */
+  z-index: 1;
+
+    .header-left {
+        top: 0;
+        flex: 0 0 45%; // Takes up 30% of the width
+        display: flex;
+        justify-content: flex-start; // Aligns items to the left
+        align-items: center; // Vertically centers the items
+        text-align: left;
+        color: #707070;
+        z-index: 3;
+
+        .parent {
+          position: relative; /* Ensures the child is positioned relative to this container */
+        }
+
+        .profile-pic {
+            border-radius: 30px;
+            background-color: $box-color-light;
+        }
+
+        .header-profile {
+            margin-right: 10px; // Space between profile image and text
+            display: flex;
+            align-items: center;
+            padding: 1rem; // Ensure no extra padding
+            border-radius: 10px;
+        }
+
+        .header-base {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; // Align text to the left
+            padding: 0; // Ensure no extra padding
+            margin: 0; // Ensure no extra margin
+        }
+    }
+
+    .divider {
+        width: 2px; // The width of the vertical line
+        background-color: $box-color-light; // Color of the divider line
+        height: calc(var(--header-height) * 0.8);; // Adjust the height of the divider line
+        align-self: stretch; /* Ensures the divider spans the full height */
+        margin-top: 12px; /* Adjust to drop the divider down */
+        align-items: center;
+        z-index: 10;
+    }
+
+    .right-header {
+        flex: 0 0 45%; // Takes up 70% of the width
+        display: flex;
+        justify-content: flex-start; // Aligns items to the left
+        align-items: center; // Vertically centers the items
+        text-align: left;
+        color: #707070;
+        z-index: 3;
+
+        .profile-email, 
+        .profile-location,
+        .profile-resume,
+        .profile-status{
+            padding: 1rem;
+        }
+
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; // Align text to the left
+            margin: 0; // Ensure no extra margin           
+        }
+
+        .profile-resume {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; // Align text to the left
+            padding: 0; // Ensure no extra padding
+            margin: 0; // Ensure no extra margin
+        }
+    }
+
+    &.light-mode {
+        background-color: $box-color-light;
+        color: #343535;
+    }
+
+    &.dark-mode {
+        background-color: #444;
+        color: #f0f0f0;
+    }
+
+    @include flex(space-between, center, row);
+
+    h1 {
+        font-size: 2.5rem;
+        padding-top: 2rem;
+        background-clip: text;
+        display: inline-block;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        padding-top: 2rem;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        padding: 0.2rem 0rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        padding: 0.2rem 0rem;
+    }
+
+    p {
+        padding-top: 1rem;
+    }
+
+}
+
+body {
+    padding-top: 2rem;
+}
+
+#theme-toggle,
+#linkedin-toggle,
+#github-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#theme-icon,
+#linkedin-icon,
+#github-icon {
+    width: 20px;
+    height: 20px;
+}
+

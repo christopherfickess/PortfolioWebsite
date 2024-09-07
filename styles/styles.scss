@@ -2,6 +2,21 @@ $grey-text: #b9b9b9;
 $font-size-large: 5rem;
 $font-size-medium: 3.5rem;
 $font-size-small: 2rem;
+$box-color-dark: #23262b;
+$box-color-light: #b4b4b4;
+$portfolio-color: rgba(0, 0, 0, .05);
+$primary-color: #1d1e24;
+$secondary-color: #ffffff;
+$black-text: black;
+$white-text: white;
+$side-bar-original: #2E2F36;
+$side-bar-click: #304cfd;
+$header1: 3.5rem;
+$header2: 4rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$header5: 2rem;
+$text: 2.5rem;
 
 @mixin flex($justify, $align, $direction) {
   display: flex;
@@ -12,120 +27,142 @@ $font-size-small: 2rem;
 
 @import '_global';
 
-@media (max-width: 1520px) {
-  html {
-    font-size: 53%;
-  }
-
-  .intro-text h2 {
-    font-size: $font-size-large;
-  }
-
-  .intro-text h3 {
-    font-size: $font-size-medium;
-  }
-
-  .intro-text p {
-    font-size: $font-size-small;
-  }
-
-  .intro {
-    min-height: 50vh;
-  }
-
-  svg {
-    width: 90%;
-  }
-
-  nav {
-    width: 80%;
-    padding: 0 2rem;
-    ul {
-      padding: 2rem 5rem;
-    }
-
-    .logo {
-      @include flex(center, center, column);
-      padding: 2rem 0;
-    }
-  }
-
-  .intro-social {
-    padding: 0 0 5rem;
-  }
-
-  footer {
-    h4 {
-      font-size: 4rem;
-    }
-
-    ul {
-      padding: 0;
-      margin: 0;
-    }
-  }
+body {
+  padding-top: 2rem;
+  color: $primary-color; /* Default text color */
+  background-color: $secondary-color; /* Default background color */
 }
 
-@media (max-width: 850px) {
-  html {
-    font-size: 45%;
-  }
-
-  nav {
-    width: 90%;
-    margin: 2rem;
-    padding: 0 2rem;
-    @include flex(center, center, row);
-
-    .logo {
-      @include flex(center, center, column);
-    }
-
-    ul {
-      padding: 0 2rem;
-    }
-
-    li {
-      padding: 0 1.57rem;
-    }
-  }
-
-  .splash {
-    display: none;
-  }
-
-  .intro-images {
-    background: url('/Portfolio/img/splash.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-  .travelly,
-  .chris-project {
-    @include flex(center, center, column);
-    flex: 1 1 50rem;
-  }
-
-  footer {
-    h4 {
-      font-size: 3rem;
-    }
-
-    ul {
-      padding: 0;
-      margin: 0;
-    }
-
-    img {
-      width: 5rem;
-    }
-  }
-
-  .intro-image {
-    display: none;
-  }
-
-  form {
-    padding: 0;
-  }
+body.light-mode,
+header.light-mode {
+    background-color: $secondary-color;
+    color: $black-text;
 }
+
+body.dark-mode,
+header.dark-mode {
+    background-color: $primary-color;
+    color: $white-text;
+}
+
+h1, h2, h3, h4, h5 , p {
+  color: inherit; 
+}
+
+// @media (max-width: 1520px) {
+//   html {
+//     font-size: 53%;
+//   }
+
+//   .intro-text h2 {
+//     font-size: $font-size-large;
+//   }
+
+//   .intro-text h3 {
+//     font-size: $font-size-medium;
+//   }
+
+//   .intro-text p {
+//     font-size: $font-size-small;
+//   }
+
+//   .intro {
+//     min-height: 50vh;
+//   }
+
+//   svg {
+//     width: 90%;
+//   }
+
+//   nav {
+//     width: 80%;
+//     padding: 0 2rem;
+//     ul {
+//       padding: 2rem 5rem;
+//     }
+
+//     .logo {
+//       @include flex(center, center, column);
+//       padding: 2rem 0;
+//     }
+//   }
+
+//   .intro-social {
+//     padding: 0 0 5rem;
+//   }
+
+//   footer {
+//     h4 {
+//       font-size: 4rem;
+//     }
+
+//     ul {
+//       padding: 0;
+//       margin: 0;
+//     }
+//   }
+// }
+
+// @media (max-width: 850px) {
+//   html {
+//     font-size: 45%;
+//   }
+
+//   nav {
+//     width: 90%;
+//     margin: 2rem;
+//     padding: 0 2rem;
+//     @include flex(center, center, row);
+
+//     .logo {
+//       @include flex(center, center, column);
+//     }
+
+//     ul {
+//       padding: 0 2rem;
+//     }
+
+//     li {
+//       padding: 0 1.57rem;
+//     }
+//   }
+
+//   .splash {
+//     display: none;
+//   }
+
+//   .intro-images {
+//     background: url('/Portfolio/img/splash.png');
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//   }
+
+//   .travelly,
+//   .chris-project {
+//     @include flex(center, center, column);
+//     flex: 1 1 50rem;
+//   }
+
+//   footer {
+//     h4 {
+//       font-size: 3rem;
+//     }
+
+//     ul {
+//       padding: 0;
+//       margin: 0;
+//     }
+
+//     img {
+//       width: 5rem;
+//     }
+//   }
+
+//   .intro-image {
+//     display: none;
+//   }
+
+//   form {
+//     padding: 0;
+//   }
+// }
